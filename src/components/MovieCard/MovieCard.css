@@ -1,0 +1,141 @@
+.movie {
+  width: 450px;
+  height: 280px;
+  display: grid;
+  grid-template-columns: 183px 1fr;
+  grid-template-rows: minmax(95px, max-content) 1fr 50px;
+  column-gap: 20px;
+  grid-template-areas:
+    'poster header'
+    'poster description'
+    'poster rate';
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.movie__img-wrapper {
+  background: var(--date-color);
+  grid-area: poster;
+}
+
+.movie__header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.movie__title {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: inherit;
+  padding-right: 45px;
+  max-height: 150px;
+  overflow-x: hidden;
+}
+
+.movie__released {
+  color: var(--date-color);
+}
+
+.movie__genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 3px;
+}
+
+.movie__genre {
+  border: 1px solid var(--normal-color);
+  border-radius: 2px;
+  height: 20px;
+  line-height: 1;
+  padding: 0 5px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie__description-container {
+  grid-area: description;
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
+.movie__description {
+  padding-right: 20px;
+}
+
+.movie__rate {
+  grid-area: rate;
+  width: 230px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ant-rate {
+  font-size: 15px;
+}
+
+.movie__rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.movie__rating--value--low {
+  outline: 2px solid var(--rating-low);
+}
+
+.movie__rating--value--medium {
+  outline: 2px solid var(--rating-medium);
+}
+
+.movie__rating--value--good {
+  outline: 2px solid var(--rating-good);
+}
+
+.movie__rating--value--excellent {
+  outline: 2px solid var(--rating-excellent);
+}
+
+@media (max-width: 499px) {
+  .movie {
+    width: 388px;
+    height: 245px;
+    grid-template-columns: 60px 1fr;
+    column-gap: 13px;
+    grid-template-areas:
+      'poster header'
+      'description description'
+      '. rate';
+    padding: 6px 10px 0 10px;
+  }
+
+  .movie__img-wrapper {
+    max-height: 91px;
+  }
+
+  .movie__description {
+    padding-right: 0;
+  }
+
+  .movie__rate {
+    margin-left: auto;
+    justify-content: end;
+  }
+
+  .movie__rating {
+    top: 5px;
+    right: 8px;
+  }
+}
