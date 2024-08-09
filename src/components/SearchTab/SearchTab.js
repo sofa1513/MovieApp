@@ -1,6 +1,5 @@
 import React from 'react'
 import { Spin, Alert, Pagination, ConfigProvider } from 'antd'
-import { GenresProvider } from '../../contexts/genresContext'
 import SearchMovie from '../SearchMovie/SearchMovie'
 import MoviesList from '../MoviesList/MoviesList'
 
@@ -16,12 +15,11 @@ const SearchTab = ({
   searchQuery,
   renderMovies,
   getMoviesFromPage,
-  genresContext,
   currentPage,
   setCurrentPage
 }) => {
   return (
-  <GenresProvider value={genresContext}>
+ 
   <main>
     <SearchMovie searchMovies={searchMovies} />
     <div className="movies-wrapper">
@@ -59,7 +57,7 @@ const SearchTab = ({
       )}
     </ConfigProvider>
   </main>
-</GenresProvider>
+
   )
 
 }

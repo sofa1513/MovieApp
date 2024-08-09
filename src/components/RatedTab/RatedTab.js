@@ -1,7 +1,7 @@
 import React from "react";
 import { Spin, Alert, Pagination, ConfigProvider } from "antd";
 import MoviesList from "../MoviesList/MoviesList";
-import { GenresProvider } from "../../contexts/genresContext";
+
 
 const RatedTab = ({
   isFetching,
@@ -12,12 +12,11 @@ const RatedTab = ({
   ratedMovies,
   renderMovies,
   getRatedMoviesFromPage,
-  genresContext,
   currentPage,
   setCurrentPage
 }) => {
   return (
-    <GenresProvider value={genresContext}>
+    
       <main>
         <div className="movies-wrapper">
           {isFetching ? (
@@ -54,7 +53,7 @@ const RatedTab = ({
           )} 
         </ConfigProvider>
         </main>
-    </GenresProvider>
+   
   )
 }
 
